@@ -19,7 +19,6 @@ public class ProductServiceImpl implements ProductService {
     private static final Map<Integer, Product> daoMap = new HashMap<>();
 
     static {
-
         Product p1 = new Product(1, "iphonex", 9999, 10);
         Product p2 = new Product(2, "冰箱", 5342, 19);
         Product p3 = new Product(3, "洗衣机", 523, 90);
