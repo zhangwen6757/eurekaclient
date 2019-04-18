@@ -13,4 +13,8 @@ import java.util.List;
  **/
 public interface ProductService {
     List<Product> getList();
+
+    Product findProduce(Integer id);
+
+    Product modify(Product product);
 }

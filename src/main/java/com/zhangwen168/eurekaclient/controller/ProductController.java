@@ -4,8 +4,7 @@ import com.netflix.discovery.converters.Auto;
 import com.zhangwen168.eurekaclient.domain.Product;
 import com.zhangwen168.eurekaclient.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,6 +25,16 @@ public class ProductController {
     @RequestMapping("getList")
     public List<Product> getList() {
         return productService.getList();
+    }
+
+    @GetMapping("/findone")
+    public Product findProduceRestful( Integer id) {
+        return productService.findProduce(id);
+    }
+
+    @PutMapping("/mod")
+    public Product modify(@RequestBody Product product) {
+        return productService.modify(product);
     }
 
 }

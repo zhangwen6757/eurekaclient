@@ -1,6 +1,8 @@
 package com.zhangwen168.eurekaclient.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -12,6 +14,8 @@ import java.io.Serializable;
  * @Company 北京国文互联教育科技集团有限公司
  **/
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Product implements Serializable {
     private int id;
 
@@ -30,10 +34,4 @@ public class Product implements Serializable {
      */
     private int store;
 
-    public Product(int id, String name, int price, int store) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.store = store;
-    }
 }

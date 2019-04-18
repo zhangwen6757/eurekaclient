@@ -42,4 +42,18 @@ public class ProductServiceImpl implements ProductService {
         List<Product> list = new ArrayList<>(collection);
         return list;
     }
+
+    @Override
+    public Product findProduce(Integer id) {
+        return daoMap.get(id);
+    }
+
+    @Override
+    public Product modify(Product product) {
+        Product p = daoMap.get(Integer.valueOf(product.getId()).intValue());
+        if (p != null) {
+            daoMap.put(product.getId(), product);
+        }
+        return daoMap.get(product.getId());
+    }
 }
