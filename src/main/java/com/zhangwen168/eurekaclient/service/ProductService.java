@@ -17,4 +17,8 @@ public interface ProductService {
     Product findProduce(Integer id);
 
     Product modify(Product product);
+
+    List<Product> del(Integer id);
+
+    List<Product> addOne(Product product);
 }

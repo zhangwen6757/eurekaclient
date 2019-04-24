@@ -28,13 +28,23 @@ public class ProductController {
     }
 
     @GetMapping("/findone")
-    public Product findProduceRestful( Integer id) {
+    public Product findProduceRestful(Integer id) {
         return productService.findProduce(id);
     }
 
     @PutMapping("/mod")
     public Product modify(@RequestBody Product product) {
         return productService.modify(product);
+    }
+
+    @DeleteMapping("/del")
+    public List<Product> delete (Integer id) {
+        return productService.del(id);
+    }
+
+    @PostMapping("/addOne")
+    public List<Product> addOne(@RequestBody Product product) {
+        return productService.addOne(product);
     }
 
 }

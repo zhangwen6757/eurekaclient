@@ -1,5 +1,6 @@
 package com.zhangwen168.eurekaclient.service.impl;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import com.zhangwen168.eurekaclient.domain.Product;
 import com.zhangwen168.eurekaclient.service.ProductService;
 import org.springframework.stereotype.Service;
@@ -55,5 +56,19 @@ public class ProductServiceImpl implements ProductService {
             daoMap.put(product.getId(), product);
         }
         return daoMap.get(product.getId());
+    }
+
+    @Override
+    public List<Product> del(Integer id) {
+        System.out.println(id);
+        daoMap.remove(id);
+        System.out.println(daoMap);
+        return new ArrayList<>(daoMap.values());
+    }
+
+    @Override
+    public List<Product> addOne(Product product) {
+        daoMap.put(product.getId(), product);
+        return new ArrayList<>(daoMap.values());
     }
 }
