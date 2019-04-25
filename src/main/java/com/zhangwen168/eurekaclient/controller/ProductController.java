@@ -3,6 +3,7 @@ package com.zhangwen168.eurekaclient.controller;
 import com.netflix.discovery.converters.Auto;
 import com.zhangwen168.eurekaclient.domain.Product;
 import com.zhangwen168.eurekaclient.service.ProductService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,7 @@ import java.util.List;
  **/
 @RestController
 @RequestMapping("/product")
+@Slf4j
 public class ProductController {
 
     @Autowired
@@ -24,6 +26,7 @@ public class ProductController {
 
     @RequestMapping("getList")
     public List<Product> getList() {
+        System.out.println("111111111111111111111");
         return productService.getList();
     }
 

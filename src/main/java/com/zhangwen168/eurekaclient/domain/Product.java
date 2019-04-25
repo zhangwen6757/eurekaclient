@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.awt.geom.RoundRectangle2D;
 import java.io.Serializable;
 
 /**
@@ -17,7 +18,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Product implements Serializable {
-    private int id;
+    private Integer id;
 
     /**
      * 商品名称
@@ -27,11 +28,11 @@ public class Product implements Serializable {
     /**
      * 价格,分为单位
      */
-    private int price;
+    private Double price;
 
     /**
      * 库存
      */
-    private int store;
+    private Integer store;
 
 }
